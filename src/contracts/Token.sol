@@ -7,14 +7,25 @@ contract Token is ERC20 {
     //minter variable
     address public minter;
 
-    //add minter changed event
+    //minter changed event
+    event MinterChanged(address indexed from, address to);
 
     constructor() public payable ERC20("Lugashs DBank Currency", "LDBC") {
         //asigning initial minter
         minter = msg.sender;
     }
 
-    //Add pass minter role function
+    //pass minter role function
+    function passMinterRole(address dBank) public returns (bool) {
+        require(
+            msg.sender == minter,
+            "Error, only owner can change pass minter role"
+        );
+        minter = dBank;
+
+        emit MinterChanged(msg.sender, dBank);
+        return true;
+    }
 
     function mint(address account, uint256 amount) public {
         //check if msg.sender have minter role
