@@ -1,2 +1,3 @@
-# DBank
-Decentrelized bank on Ethereum Blockchain
+# DBank DAPP
+
+Decentrelized bank app on Ethereum Blockchain
