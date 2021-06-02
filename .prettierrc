@@ -1,5 +1,10 @@
- 
 {
+  "jsxSingleQuote": true,
+  "singleQuote": true,
+  "enableDebugLogs": true,
+  "printWidth": 120,
+
+
   "overrides": [
     {
       "files": "*.sol",
